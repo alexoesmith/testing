@@ -4,7 +4,12 @@ import axios from "axios";
 const sendMail = async () => {
   try {
     const response = await axios.get("/.netlify/functions/sendMail");
-    console.log("The response is, " + response.data);
+
+    if (response.ok) {
+      console.log("The response is, " + response.data);
+    } else {
+      throw new Error(response.statusText);
+    }
   } catch (error) {
     console.log(error);
   }

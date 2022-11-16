@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const handler = async (event) => {
   try {
-    await axios.post("http://localhost:1337/api/email", {
+    await axios.post("https://api.gomediadev.co.uk/api/email", {
       to: "alexoesmith@gmail.com",
       from: "alexoesmith@gmail.com",
       subject: "Hello from Netlify function",
